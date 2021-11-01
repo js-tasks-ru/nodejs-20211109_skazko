@@ -1,5 +1,9 @@
 function sum(a, b) {
-  /* ваш код */
+  if ([a, b].every(Number.isFinite)) {
+    return a + b;
+  }
+
+  throw new TypeError('both arguments should be type of Number');
 }
 
 module.exports = sum;
