@@ -11,9 +11,9 @@ const StubTransport = require('nodemailer-stub-transport');
 const transportEngine = process.env.NODE_ENV === 'test' ?
   new StubTransport() :
   new SMTPTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
+    host: config.mailer.host,
+    port: config.mailer.port,
+    // secure: true,
     auth: {
       user: config.mailer.user,
       pass: config.mailer.password,
